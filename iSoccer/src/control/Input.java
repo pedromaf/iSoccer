@@ -10,7 +10,7 @@ public class Input {
     private static Scanner input = new Scanner(System.in);
 
     //VALIDAR ENTRADAS
-    public static int validarOpcao(int limite1, int limite2) {
+    public static int validarOpcao(int limite1, int limite2) throws NumberFormatException {
 
         int operacao;
 
@@ -27,7 +27,7 @@ public class Input {
         return operacao;
     }
 
-    public static boolean validarOperacaoBinaria() {
+    public static boolean validarOperacaoBinaria() throws NumberFormatException {
 
         return (validarOpcao(1,2) == 1);
 
@@ -40,12 +40,12 @@ public class Input {
         return input.nextLine();
     }
 
-    public static double lerDouble() {
+    public static double lerDouble() throws NumberFormatException {
 
         return Double.parseDouble(input.nextLine());
     }
 
-    public static int lerInt() {
+    public static int lerInt() throws NumberFormatException {
 
         return Integer.parseInt(input.nextLine());
     }
