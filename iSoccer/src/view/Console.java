@@ -21,6 +21,11 @@ public class Console {
         digiteOpcao();
     }
 
+    public static void mostrar(String informacao) {
+
+        System.out.println(informacao);
+    }
+
 
     //LOGIN
     public static void menuLogin() {
@@ -44,6 +49,43 @@ public class Console {
     }
 
 
+    //SOLICITAR DADOS PESSOAIS
+    public static void solicitarNome() {
+
+        System.out.println("Digite o nome completo:");
+    }
+
+    public static void solicitarEmail() {
+
+        System.out.println("Digite o email:");
+    }
+
+    public static void solicitarCpf() {
+
+        System.out.println("Digite o CPF:");
+    }
+
+    public static void solicitarTelefone() {
+
+        System.out.println("Digite o telefone:");
+    }
+
+    public static void solicitarEndereco() {
+
+        System.out.println("Digite o endereco:");
+    }
+
+    public static void solicitarCrm() {
+
+        System.out.println("Digite o CRM:");
+    }
+
+    public static void solicitarNumeroHabilitacao() {
+
+        System.out.println("Digite o numero da habilitacao:");
+    }
+
+
     //ADD FUNCIONARIO
     public static void menuAdicionarFuncionario() {
 
@@ -61,39 +103,9 @@ public class Console {
         digiteOpcao();
     }
 
-    public static void solicitarNome() {
-
-        System.out.println("Digite o nome completo do funcionario:");
-    }
-
-    public static void solicitarEmail() {
-
-        System.out.println("Digite o email do funcionario:");
-    }
-
-    public static void solicitarCpf() {
-
-        System.out.println("Digite o CPF do funcionario:");
-    }
-
-    public static void solicitarTelefone() {
-
-        System.out.println("Digite o telefone do funcionario:");
-    }
-
     public static void solicitarSalario() {
 
         System.out.println("Digite o salario do funcionario:");
-    }
-
-    public static void solicitarCrm() {
-
-        System.out.println("Digite o CRM do funcionario:");
-    }
-
-    public static void solicitarNumeroHabilitacao() {
-
-        System.out.println("Digite o numero da habilitacao do funcionario:");
     }
 
     public static void solicitarTipoJogador() {
@@ -113,5 +125,54 @@ public class Console {
     public static void funcionarioAdicionado() {
 
         System.out.println("Funcionario adicionado!");
+    }
+
+
+    //ADD SOCIOTORCEDOR
+    public static void solicitarTipoSocio() {
+
+        System.out.println("Qual o tipo de sociotorcedor?");
+        System.out.println("[1] Junior");
+        System.out.println("[2] Senior");
+        System.out.println("[3] Elite");
+
+        digiteOpcao();
+    }
+
+    public static void sociotorcedorAdicionado() {
+
+        System.out.println("Sociotorcedor adicionado!");
+    }
+
+
+    //ALTERAR VALOR DE CONTRIBUICAO DOS SOCIOSTORCEDORES
+    public static void menuAlterarValorContribuicao() {
+
+        System.out.println("\n\t\t[Alterar Contribuicao]\n");
+        System.out.println("[1] Junior");
+        System.out.println("[2] Senior");
+        System.out.println("[3] Elite");
+        System.out.println("[4] Voltar");
+
+        digiteOpcao();
+    }
+
+    public static void solicitarNovoValorContribuicao() {
+
+        System.out.println("Digite o novo valor de contribuicao:");
+    }
+
+    public static void valorContribuicaoAlterado(int opcao) {
+
+        String tipoSocio;
+        if(opcao == 1) {
+            tipoSocio = "Junior";
+        } else if(opcao == 2) {
+            tipoSocio = "Senior";
+        } else {
+            tipoSocio = "Elite";
+        }
+
+        System.out.println("Valor de contribuicao " + tipoSocio + " alterado!");
     }
 }
