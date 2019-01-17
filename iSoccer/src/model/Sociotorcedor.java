@@ -12,6 +12,7 @@ public class Sociotorcedor implements Relatorio{
     private String telefone;
     private String endereco;
     private Tipo tipo;
+    private boolean inadimplente;
 
     public Sociotorcedor(String nome, String email, String cpf, String telefone, String endereco, int tipo) {
 
@@ -21,6 +22,17 @@ public class Sociotorcedor implements Relatorio{
         this.telefone = telefone;
         this.endereco = endereco;
         this.tipo = getTipoPorNumero(tipo);
+        this.inadimplente = false;
+    }
+
+    public void alterarInadimplencia() {
+
+        this.inadimplente = !this.inadimplente;
+    }
+
+    public String getCpf() {
+
+        return cpf;
     }
 
     public Tipo getTipoPorNumero(int tipo) {

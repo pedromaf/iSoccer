@@ -14,9 +14,10 @@ public class Console {
         System.out.println("[1] Adicionar funcionario");
         System.out.println("[2] Adicionar socio-torcedor");
         System.out.println("[3] Alterar valores de contribuicao");
-        System.out.println("[4] Gerenciar recursos");
-        System.out.println("[5] Solicitar relatorio");
-        System.out.println("[6] Sair");
+        System.out.println("[4] Alterar estado de pagamento de socio-torcedor");
+        System.out.println("[5] Gerenciar recursos");
+        System.out.println("[6] Solicitar relatorio");
+        System.out.println("[7] Sair");
 
         digiteOpcao();
     }
@@ -145,7 +146,7 @@ public class Console {
     }
 
 
-    //ALTERAR VALOR DE CONTRIBUICAO DOS SOCIOSTORCEDORES
+    //SOCIOSTORCEDORES
     public static void menuAlterarValorContribuicao() {
 
         System.out.println("\n\t\t[Alterar Contribuicao]\n");
@@ -174,5 +175,145 @@ public class Console {
         }
 
         System.out.println("Valor de contribuicao " + tipoSocio + " alterado!");
+    }
+
+    public static void estadoDePagamentoAlterado() {
+
+        System.out.println("Estado de pagamento alterado!");
+    }
+
+
+    //GERENCIAR RECURSOS
+    public static void menuGerenciarRecursos() {
+
+        System.out.println("\n\t\t[Recursos Fisicos]\n");
+        System.out.println("[1] Onibus");
+        System.out.println("[2] Estadio");
+        System.out.println("[3] Centro de treinamento");
+        System.out.println("[4] Voltar");
+
+        digiteOpcao();
+    }
+
+    public static void onibusDisponiveis(int size) {
+
+        if(size == 0) {
+            System.out.println("Nao ha onibus disponivel.");
+        }else if(size == 1) {
+            System.out.println("Ha " + size + " onibus disponivel.");
+        } else {
+            System.out.println("Ha " + size + " onibus disponiveis.");
+        }
+    }
+
+    public static void menuOnibus() {
+
+        System.out.println("\n\t\t[Onibus]\n");
+        System.out.println("[1] Adicionar onibus");
+        System.out.println("[2] Alterar disponibilidade");
+        System.out.println("[3] Voltar");
+
+        digiteOpcao();
+    }
+
+    public static void solicitarIdentificacaoAdicionar() {
+
+        System.out.println("Digite uma identificacao para este recurso:");
+    }
+
+    public static void solicitarPlaca() {
+
+        System.out.println("Digite a placa do onibus:");
+    }
+
+    public static void onibusAdicionado() {
+
+        System.out.println("Onibus adicionado!");
+    }
+
+    public static void solicitarIdentificacaoBuscar() {
+
+        System.out.println("Digite a identificacao do recurso desejado");
+    }
+
+    public static void disponibilidadeAlterada() {
+
+        System.out.println("Disponibilidade alterada!");
+    }
+
+    public static void menuEstadioIndisponivel() {
+
+        System.out.println("\n\t\t[Estadio]\n");
+        System.out.println("Estadio indisponivel.\n");
+        System.out.println("[1] Adicionar estadio");
+        System.out.println("[2] Voltar");
+
+        digiteOpcao();
+    }
+
+    public static void menuEstadioDisponivel(int torcedores, int banheiros, int lanchonetes) {
+
+        System.out.println("\n\t\t[Estadio]\n");
+        System.out.println("Capacidade de torcedores: " + torcedores + ".");
+        System.out.println("Quantidade de banheiros: " + banheiros + ".");
+        System.out.println("Quantidade de lanchonetes: " + lanchonetes + ".\n");
+        System.out.println("[1] Alterar capacidade de torcedores");
+        System.out.println("[2] Alterar quantidade de banheiros");
+        System.out.println("[3] Alterar quantidade de lanchonetes");
+        System.out.println("[4] Voltar");
+
+
+        digiteOpcao();
+    }
+
+    public static void solicitarNovoValor() {
+
+        System.out.println("Digite o novo valor:");
+    }
+
+    public static void solicitarNumeroTorcedores() {
+
+        System.out.println("Digite o numero de torcedores suportados:");
+    }
+
+    public static void solicitarNumeroBanheiros() {
+
+        System.out.println("Digite o numero de banheiros:");
+    }
+
+    public static void solicitarNumeroLanchonetes() {
+
+        System.out.println("Digite o numero de lanchonetes:");
+    }
+
+    public static void estadioAdicionado() {
+
+        System.out.println("Estadio adicionado!");
+    }
+
+    public static void informacoesCentroTreinamento(int numeroDormitorios) {
+
+        System.out.println("\n\t\t[Centro de Treinamento]\n");
+        System.out.println("Numero de dormitorios: " + numeroDormitorios + ".");
+    }
+
+    public static void menuCentroTreinamento() {
+
+        System.out.println("\n\t\t[Centro de Treinamento]\n");
+        System.out.println("Centro de treinamento indisponivel.\n");
+        System.out.println("[1] Adicionar centro de treinamento");
+        System.out.println("[2] Voltar");
+
+        digiteOpcao();
+    }
+
+    public static void solicitarNumeroDormitorios() {
+
+        System.out.println("Digite o numero de dormitorios:");
+    }
+
+    public static void centroTreinamentoAdicionado() {
+
+        System.out.println("Centro de treinamento adicionado!");
     }
 }

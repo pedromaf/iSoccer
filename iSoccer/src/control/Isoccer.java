@@ -13,6 +13,8 @@ class Isoccer {
     private ArrayList<Funcionario> listaFuncionarios;
     private ArrayList<Sociotorcedor> listaSociostorcedores;
 
+    private ArrayList<RecursoFisico> listaRecursosFisicos;
+
     private double valorContribuicaoSocioJunior;
     private double valorContribuicaoSocioSenior;
     private double valorContribuicaoSocioElite;
@@ -21,6 +23,7 @@ class Isoccer {
         this.admin = Login.getInstance();
         this.listaFuncionarios = new ArrayList<>();
         this.listaSociostorcedores = new ArrayList<>();
+        this.listaRecursosFisicos = new ArrayList<>();
         this.valorContribuicaoSocioJunior = 10;
         this.valorContribuicaoSocioSenior = 20;
         this.valorContribuicaoSocioElite = 30;
@@ -65,7 +68,7 @@ class Isoccer {
         do {
             Console.menuPrincipal();
             try {
-                opcao = Input.validarOpcao(1,6);
+                opcao = Input.validarOpcao(1,7);
 
                 switch(opcao) {
                     case 1:
@@ -78,10 +81,14 @@ class Isoccer {
                         alterarValorContribuicao();
                         break;
                     case 4:
+                        alterarEstadoDePagamentoSocio();
                         break;
                     case 5:
+                        menuRecursos();
                         break;
                     case 6:
+                        break;
+                    case 7:
                     default:
                         voltar = true;
                 }
@@ -272,6 +279,335 @@ class Isoccer {
 
             Console.valorContribuicaoAlterado(opcao);
         }
+    }
+
+    private void alterarEstadoDePagamentoSocio() {
+
+        if(!this.listaSociostorcedores.isEmpty()) {
+            String cpfSocio;
+
+            Console.solicitarCpf();
+            cpfSocio = Input.lerString();
+
+            for(Sociotorcedor atual : this.listaSociostorcedores) {
+                if(atual.getCpf().equals(cpfSocio)) {
+                    atual.alterarInadimplencia();
+                    Console.estadoDePagamentoAlterado();
+                    return;
+                }
+            }
+            Erro.socioNaoEncontrado();
+        } else {
+            Erro.naoHaSociosCadastrados();
+        }
+    }
+
+    private void menuRecursos() {
+
+        int opcao = 0;
+        boolean entradaValida = false;
+
+        do {
+            Console.menuGerenciarRecursos();
+            try {
+                opcao = Input.validarOpcao(1,4);
+                entradaValida = true;
+            } catch(NumberFormatException exception) {
+                Erro.entradaInvalida();
+            }
+        }while(!entradaValida);
+
+        switch(opcao) {
+            case 1:
+                menuGerenciarOnibus();
+                break;
+            case 2:
+                menuGerenciarEstadio();
+                break;
+            case 3:
+                menuGerenciarCentroTreinamento();
+                break;
+            default:
+        }
+    }
+
+    private void menuGerenciarCentroTreinamento() {
+
+        CentroTreinamento centro = centroTreinamentoDisponivel();
+
+        if(centro != null) {
+            Console.informacoesCentroTreinamento(centro.getNumeroDormitorios());
+        } else {
+            boolean entradaValida = false;
+            int opcao = 0;
+
+            do {
+                Console.menuCentroTreinamento();
+                try {
+                    opcao = Input.validarOpcao(1,2);
+                    entradaValida = true;
+                } catch(NumberFormatException exception) {
+                    Erro.entradaInvalida();
+                }
+            } while(!entradaValida);
+
+            if(opcao == 1) {
+                String identificacao = validarIdentificacao();
+                int numeroDormitorios = 0;
+
+                entradaValida = false;
+                do {
+                    Console.solicitarNumeroDormitorios();
+                    try {
+                        numeroDormitorios = Input.lerInt();
+                        entradaValida = true;
+                    } catch(NumberFormatException exception) {
+                        Erro.entradaInvalida();
+                    }
+                } while(!entradaValida);
+
+                this.listaRecursosFisicos.add(new CentroTreinamento(identificacao, numeroDormitorios));
+                Console.centroTreinamentoAdicionado();
+            }
+        }
+    }
+
+    private CentroTreinamento centroTreinamentoDisponivel() {
+
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual instanceof CentroTreinamento) {
+                return (CentroTreinamento) atual;
+            }
+        }
+        return null;
+    }
+
+    private Estadio estadioDisponivel() {
+
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual instanceof Estadio) {
+                return (Estadio)atual;
+            }
+        }
+        return null;
+    }
+
+    private void menuGerenciarEstadio() {
+
+        Estadio estadio = estadioDisponivel();
+
+        if(estadio != null) {
+            menuEstadioDisponivel(estadio);
+        } else {
+            menuEstadioIndisponivel();
+        }
+    }
+
+    private void menuEstadioDisponivel(Estadio estadio) {
+
+        boolean entradaValida = false;
+        int opcao = 0;
+        int novoValor = 0;
+
+        do {
+            Console.menuEstadioDisponivel(estadio.getNumeroTorcedores(), estadio.getNumeroBanheiros(), estadio.getNumeroLanchonetes());
+            try {
+                opcao = Input.validarOpcao(1,4);
+                entradaValida = true;
+            } catch(NumberFormatException exception) {
+                Erro.entradaInvalida();
+            }
+        } while(!entradaValida);
+
+        if(opcao != 4) {
+            entradaValida = false;
+            do {
+                Console.solicitarNovoValor();
+                try {
+                    novoValor = Input.lerInt();
+                    if(novoValor > 0) {
+                        entradaValida = true;
+                    } else {
+                        Erro.entradaInvalida();
+                    }
+                } catch(NumberFormatException exception) {
+                    Erro.entradaInvalida();
+                }
+            } while(!entradaValida);
+        }
+
+        switch(opcao) {
+            case 1:
+                estadio.setNumeroTorcedores(novoValor);
+                break;
+            case 2:
+                estadio.setNumeroBanheiros(novoValor);
+                break;
+            case 3:
+                estadio.setNumeroLanchonetes(novoValor);
+            default:
+        }
+    }
+
+    private void menuEstadioIndisponivel() {
+
+        boolean entradaValida = false;
+        int opcao = 0;
+
+        do {
+            Console.menuEstadioIndisponivel();
+            try {
+                opcao = Input.validarOpcao(1,2);
+                entradaValida = true;
+            } catch(NumberFormatException exception) {
+                Erro.entradaInvalida();
+            }
+        } while(!entradaValida);
+
+        if(opcao == 1) {
+            String identificacao = validarIdentificacao();
+            int numeroTorcedores = 0;
+            int numeroBanheiros = 0;
+            int numeroLanchonetes = 0;
+
+            entradaValida = false;
+            do {
+                Console.solicitarNumeroTorcedores();
+                try {
+                    numeroTorcedores = Input.lerInt();
+                    entradaValida = true;
+                } catch(NumberFormatException exception) {
+                    Erro.entradaInvalida();
+                }
+            } while(!entradaValida);
+
+            entradaValida = false;
+            do {
+                Console.solicitarNumeroBanheiros();
+                try {
+                    numeroBanheiros = Input.lerInt();
+                    entradaValida = true;
+                } catch(NumberFormatException exception) {
+                    Erro.entradaInvalida();
+                }
+            } while(!entradaValida);
+
+            entradaValida = false;
+            do {
+                Console.solicitarNumeroLanchonetes();
+                try {
+                    numeroLanchonetes = Input.lerInt();
+                    entradaValida = true;
+                } catch(NumberFormatException exception) {
+                    Erro.entradaInvalida();
+                }
+            } while(!entradaValida);
+
+            this.listaRecursosFisicos.add(new Estadio(identificacao, numeroTorcedores, numeroBanheiros, numeroLanchonetes));
+            Console.estadioAdicionado();
+        }
+    }
+
+    private void menuGerenciarOnibus() {
+
+        boolean entradaValida = false;
+        int opcao = 0;
+
+        Console.onibusDisponiveis(onibusDisponiveis());
+
+        do {
+            Console.menuOnibus();
+            try {
+                opcao = Input.validarOpcao(1,3);
+                entradaValida = true;
+            } catch(NumberFormatException exception) {
+                Erro.entradaInvalida();
+            }
+        }while(!entradaValida);
+
+        switch(opcao) {
+            case 1:
+                adicionarOnibus();
+                break;
+            case 2:
+                alterarDisponibilidadeOnibus();
+            default:
+        }
+    }
+
+    private int onibusDisponiveis() {
+
+        int quantidade = 0;
+
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual instanceof Onibus) {
+                if(((Onibus)atual).getDisponivel()) {
+                    quantidade++;
+                }
+            }
+        }
+        return quantidade;
+    }
+
+    private boolean checarIdentificacao(String identificacao) {
+
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual.getIdentificacao().equals(identificacao)) {
+                Erro.identificacaoInvalida();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private String validarIdentificacao() {
+
+        String identificacao;
+
+        do {
+            Console.solicitarIdentificacaoAdicionar();
+            identificacao = Input.lerString();
+        }while(!checarIdentificacao(identificacao));
+
+        return identificacao;
+    }
+
+    private void adicionarOnibus() {
+
+        String identificacao;
+        String placa;
+
+        identificacao = validarIdentificacao();
+
+        Console.solicitarPlaca();
+        placa = Input.lerString();
+
+        this.listaRecursosFisicos.add(new Onibus(identificacao, placa));
+        Console.onibusAdicionado();
+    }
+
+    private void alterarDisponibilidadeOnibus() {
+
+        Console.solicitarIdentificacaoBuscar();
+
+        Onibus onibus = getOnibusPorIdentificacao(Input.lerString());
+        if(onibus != null) {
+            onibus.alterarDisponibilidade();
+            Console.disponibilidadeAlterada();
+        }
+    }
+
+    private Onibus getOnibusPorIdentificacao(String identificacao) {
+
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual instanceof Onibus) {
+                if(atual.getIdentificacao().equals(identificacao)) {
+                    return (Onibus)atual;
+                }
+            }
+        }
+        Erro.identificacaoInvalida();
+        return null;
     }
 }
 

@@ -24,4 +24,21 @@ public class Erro {
 
         System.out.println("Senha invalida!");
     }
+
+
+    //SOCIOTORCEDOR
+    public static void socioNaoEncontrado() {
+
+        System.out.println("Nenhum socio-torcedor encontrado com este CPF!");
+    }
+
+    public static void naoHaSociosCadastrados() {
+
+        System.out.println("Nao ha socios-torcedores cadastrados!");
+    }
+
+    public static void identificacaoInvalida() {
+
+        System.out.println("Identificacao invalida!");
+    }
 }
