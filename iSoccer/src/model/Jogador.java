@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class Jogador extends Funcionario {
 
     public enum Tipo {
@@ -16,7 +18,12 @@ public class Jogador extends Funcionario {
         this.apto = true;
     }
 
-    public Tipo getTipoPorNumero(int tipo) {
+    public void alterarAptidao() {
+
+        this.apto = !this.apto;
+    }
+
+    private Tipo getTipoPorNumero(int tipo) {
 
         switch(tipo) {
             case 1:
@@ -37,9 +44,35 @@ public class Jogador extends Funcionario {
         }
     }
 
+    private String getTipoString() {
+
+        switch(this.tipo) {
+            case VOLANTE:
+                return "Volante";
+            case ZAGUEIRO:
+                return "Zagueiro";
+            case MEIA:
+                return "Meia";
+            case GOLEIRO:
+                return "Goleiro";
+            case ATACANTE:
+                return "Atacante";
+            case LATERALESQUERDO:
+                return "Lateral esquerdo";
+            case LATERALDIREITO:
+            default:
+                return "Lateral direito";
+        }
+    }
+
     @Override
     public void relatorio() {
         super.relatorio();
-        //TODO
+        Console.mostrar("Tipo: " + getTipoString());
+        if(this.apto) {
+            Console.mostrar("Jogador apto para jogar.");
+        } else {
+            Console.mostrar("Jogador inapto para jogar.");
+        }
     }
 }

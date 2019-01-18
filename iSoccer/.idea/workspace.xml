@@ -12,7 +12,7 @@
     <session id="1170452111">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="3" />
@@ -23,38 +23,46 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="17832" />
+          <entry key="java" value="21296" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="17832" />
+          <entry key="JAVA" value="21296" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="33" />
+          <entry key="java" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="33" />
+          <entry key="JAVA" value="43" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/control/Isoccer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="562" column="42" lean-forward="true" selection-start-line="562" selection-start-column="42" selection-end-line="562" selection-end-column="42" />
+            <state relative-caret-position="339">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#Isoccer#0;class#Isoccer#0" />
                 <element signature="method#getInstance#0;class#Isoccer#0" />
                 <element signature="method#entrar#0;class#Isoccer#0" />
+                <element signature="method#menuPrincipal#0;class#Isoccer#0" />
+                <element signature="method#alterarEstadoDeJogador#0;class#Isoccer#0" />
+                <element signature="method#menuRelatorio#0;class#Isoccer#0" />
+                <element signature="method#relatorioGeral#0;class#Isoccer#0" />
+                <element signature="method#relatorioFuncionarios#0;class#Isoccer#0" />
+                <element signature="method#relatorioRecursosFisicos#0;class#Isoccer#0" />
+                <element signature="method#relatorioSocios#0;class#Isoccer#0" />
                 <element signature="method#adicionarFuncionario#0;class#Isoccer#0" />
                 <element signature="method#adicionarSociotorcedor#0;class#Isoccer#0" />
                 <element signature="method#alterarValorContribuicao#0;class#Isoccer#0" />
@@ -69,91 +77,10 @@
                 <element signature="method#menuGerenciarOnibus#0;class#Isoccer#0" />
                 <element signature="method#onibusDisponiveis#0;class#Isoccer#0" />
                 <element signature="method#checarIdentificacao#0;class#Isoccer#0" />
+                <element signature="method#validarIdentificacao#0;class#Isoccer#0" />
                 <element signature="method#adicionarOnibus#0;class#Isoccer#0" />
                 <element signature="method#alterarDisponibilidadeOnibus#0;class#Isoccer#0" />
                 <element signature="method#getOnibusPorIdentificacao#0;class#Isoccer#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/CentroTreinamento.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="e#392#393#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/Console.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="303" column="57" lean-forward="true" selection-start-line="303" selection-start-column="57" selection-end-line="303" selection-end-column="57" />
-              <folding>
-                <element signature="method#digiteOpcao#0;class#Console#0" />
-                <element signature="method#mostrar#0;class#Console#0" />
-                <element signature="method#menuLogin#0;class#Console#0" />
-                <element signature="method#solicitarUsuario#0;class#Console#0" />
-                <element signature="method#solicitarSenha#0;class#Console#0" />
-                <element signature="method#solicitarNome#0;class#Console#0" />
-                <element signature="method#solicitarEmail#0;class#Console#0" />
-                <element signature="method#solicitarCpf#0;class#Console#0" />
-                <element signature="method#solicitarTelefone#0;class#Console#0" />
-                <element signature="method#solicitarEndereco#0;class#Console#0" />
-                <element signature="method#solicitarCrm#0;class#Console#0" />
-                <element signature="method#solicitarNumeroHabilitacao#0;class#Console#0" />
-                <element signature="method#menuAdicionarFuncionario#0;class#Console#0" />
-                <element signature="method#solicitarSalario#0;class#Console#0" />
-                <element signature="method#solicitarTipoJogador#0;class#Console#0" />
-                <element signature="method#funcionarioAdicionado#0;class#Console#0" />
-                <element signature="method#solicitarTipoSocio#0;class#Console#0" />
-                <element signature="method#sociotorcedorAdicionado#0;class#Console#0" />
-                <element signature="method#menuAlterarValorContribuicao#0;class#Console#0" />
-                <element signature="method#solicitarNovoValorContribuicao#0;class#Console#0" />
-                <element signature="method#valorContribuicaoAlterado#0;class#Console#0" />
-                <element signature="method#estadoDePagamentoAlterado#0;class#Console#0" />
-                <element signature="method#menuRecursos#0;class#Console#0" />
-                <element signature="method#onibusDisponiveis#0;class#Console#0" />
-                <element signature="method#menuOnibus#0;class#Console#0" />
-                <element signature="method#solicitarIdentificacaoAdicionar#0;class#Console#0" />
-                <element signature="method#solicitarPlaca#0;class#Console#0" />
-                <element signature="method#onibusAdicionado#0;class#Console#0" />
-                <element signature="method#solicitarIdentificacaoBuscar#0;class#Console#0" />
-                <element signature="method#disponibilidadeAlterada#0;class#Console#0" />
-                <element signature="method#menuEstadioIndisponivel#0;class#Console#0" />
-                <element signature="method#menuEstadioIndisponivel#1;class#Console#0" />
-                <element signature="method#solicitarNovoValor#0;class#Console#0" />
-                <element signature="method#solicitarNumeroTorcedores#0;class#Console#0" />
-                <element signature="method#solicitarNumeroBanheiros#0;class#Console#0" />
-                <element signature="method#solicitarNumeroLanchonetes#0;class#Console#0" />
-                <element signature="method#estadioAdicionado#0;class#Console#0" />
-                <element signature="method#informacoesCentroTreinamento#0;class#Console#0" />
-                <element signature="method#solicitarNumeroDormitorios#0;class#Console#0" />
-                <element signature="method#centroTreinamentoAdicionado#0;class#Console#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/Erro.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-              <folding>
-                <element signature="method#opcaoInvalida#0;class#Erro#0" />
-                <element signature="method#entradaInvalida#0;class#Erro#0" />
-                <element signature="method#usuarioInvalido#0;class#Erro#0" />
-                <element signature="method#senhaInvalida#0;class#Erro#0" />
-                <element signature="method#socioNaoEncontrado#0;class#Erro#0" />
-                <element signature="method#naoHaSociosCadastrados#0;class#Erro#0" />
-                <element signature="method#identificacaoInvalida#0;class#Erro#0" />
               </folding>
             </state>
           </provider>
@@ -178,19 +105,19 @@
         <option value="$PROJECT_DIR$/src/control/Input.java" />
         <option value="$PROJECT_DIR$/src/control/Main.java" />
         <option value="$PROJECT_DIR$/src/model/Relatorio.java" />
-        <option value="$PROJECT_DIR$/src/model/Funcionario.java" />
+        <option value="$PROJECT_DIR$/src/model/SocioTorcedor.java" />
         <option value="$PROJECT_DIR$/src/model/Medico.java" />
         <option value="$PROJECT_DIR$/src/model/Motorista.java" />
-        <option value="$PROJECT_DIR$/src/model/Jogador.java" />
-        <option value="$PROJECT_DIR$/src/model/SocioTorcedor.java" />
-        <option value="$PROJECT_DIR$/src/model/Sociotorcedor.java" />
-        <option value="$PROJECT_DIR$/src/view/Erro.java" />
         <option value="$PROJECT_DIR$/src/model/RecursoFisico.java" />
         <option value="$PROJECT_DIR$/src/model/Onibus.java" />
         <option value="$PROJECT_DIR$/src/model/Estadio.java" />
         <option value="$PROJECT_DIR$/src/model/CentroTreinamento.java" />
-        <option value="$PROJECT_DIR$/src/control/Isoccer.java" />
+        <option value="$PROJECT_DIR$/src/model/Jogador.java" />
+        <option value="$PROJECT_DIR$/src/view/Erro.java" />
         <option value="$PROJECT_DIR$/src/view/Console.java" />
+        <option value="$PROJECT_DIR$/src/model/Funcionario.java" />
+        <option value="$PROJECT_DIR$/src/model/Sociotorcedor.java" />
+        <option value="$PROJECT_DIR$/src/control/Isoccer.java" />
       </list>
     </option>
   </component>
@@ -244,7 +171,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547765683016" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547771642641" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -299,7 +226,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1108742" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1108742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -308,7 +235,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -352,48 +279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Medico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Jogador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Motorista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Funcionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Onibus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Estadio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/control/Input.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -401,24 +286,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Sociotorcedor.java">
+    <entry file="file://$PROJECT_DIR$/src/model/RecursoFisico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        <state relative-caret-position="340">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/RecursoFisico.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Onibus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="459">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Estadio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="76" selection-start-line="22" selection-start-column="76" selection-end-line="22" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/CentroTreinamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Motorista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Medico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Jogador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Erro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+        <state relative-caret-position="408">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
             <element signature="method#opcaoInvalida#0;class#Erro#0" />
             <element signature="method#entradaInvalida#0;class#Erro#0" />
@@ -427,57 +355,17 @@
             <element signature="method#socioNaoEncontrado#0;class#Erro#0" />
             <element signature="method#naoHaSociosCadastrados#0;class#Erro#0" />
             <element signature="method#identificacaoInvalida#0;class#Erro#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/CentroTreinamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/Isoccer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="562" column="42" lean-forward="true" selection-start-line="562" selection-start-column="42" selection-end-line="562" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInstance#0;class#Isoccer#0" />
-            <element signature="method#entrar#0;class#Isoccer#0" />
-            <element signature="method#adicionarFuncionario#0;class#Isoccer#0" />
-            <element signature="method#adicionarSociotorcedor#0;class#Isoccer#0" />
-            <element signature="method#alterarValorContribuicao#0;class#Isoccer#0" />
-            <element signature="method#alterarEstadoDePagamentoSocio#0;class#Isoccer#0" />
-            <element signature="method#menuRecursos#0;class#Isoccer#0" />
-            <element signature="method#menuGerenciarCentroTreinamento#0;class#Isoccer#0" />
-            <element signature="method#centroTreinamentoDisponivel#0;class#Isoccer#0" />
-            <element signature="method#estadioDisponivel#0;class#Isoccer#0" />
-            <element signature="method#menuGerenciarEstadio#0;class#Isoccer#0" />
-            <element signature="method#menuEstadioDisponivel#0;class#Isoccer#0" />
-            <element signature="method#menuEstadioIndisponivel#0;class#Isoccer#0" />
-            <element signature="method#menuGerenciarOnibus#0;class#Isoccer#0" />
-            <element signature="method#onibusDisponiveis#0;class#Isoccer#0" />
-            <element signature="method#checarIdentificacao#0;class#Isoccer#0" />
-            <element signature="method#adicionarOnibus#0;class#Isoccer#0" />
-            <element signature="method#alterarDisponibilidadeOnibus#0;class#Isoccer#0" />
-            <element signature="method#getOnibusPorIdentificacao#0;class#Isoccer#0" />
+            <element signature="method#jogadorNaoEncontrado#0;class#Erro#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Console.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="303" column="57" lean-forward="true" selection-start-line="303" selection-start-column="57" selection-end-line="303" selection-end-column="57" />
+        <state relative-caret-position="738">
+          <caret line="334" column="30" selection-start-line="334" selection-start-column="30" selection-end-line="334" selection-end-column="30" />
           <folding>
             <element signature="method#digiteOpcao#0;class#Console#0" />
-            <element signature="method#mostrar#0;class#Console#0" />
             <element signature="method#menuLogin#0;class#Console#0" />
             <element signature="method#solicitarUsuario#0;class#Console#0" />
             <element signature="method#solicitarSenha#0;class#Console#0" />
@@ -492,6 +380,7 @@
             <element signature="method#solicitarSalario#0;class#Console#0" />
             <element signature="method#solicitarTipoJogador#0;class#Console#0" />
             <element signature="method#funcionarioAdicionado#0;class#Console#0" />
+            <element signature="method#estadoJogadorAlterado#0;class#Console#0" />
             <element signature="method#solicitarTipoSocio#0;class#Console#0" />
             <element signature="method#sociotorcedorAdicionado#0;class#Console#0" />
             <element signature="method#menuAlterarValorContribuicao#0;class#Console#0" />
@@ -514,8 +403,61 @@
             <element signature="method#solicitarNumeroLanchonetes#0;class#Console#0" />
             <element signature="method#estadioAdicionado#0;class#Console#0" />
             <element signature="method#informacoesCentroTreinamento#0;class#Console#0" />
+            <element signature="method#menuCentroTreinamento#0;class#Console#0" />
             <element signature="method#solicitarNumeroDormitorios#0;class#Console#0" />
             <element signature="method#centroTreinamentoAdicionado#0;class#Console#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Funcionario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-254">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Sociotorcedor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/Isoccer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Isoccer#0;class#Isoccer#0" />
+            <element signature="method#getInstance#0;class#Isoccer#0" />
+            <element signature="method#entrar#0;class#Isoccer#0" />
+            <element signature="method#menuPrincipal#0;class#Isoccer#0" />
+            <element signature="method#alterarEstadoDeJogador#0;class#Isoccer#0" />
+            <element signature="method#menuRelatorio#0;class#Isoccer#0" />
+            <element signature="method#relatorioGeral#0;class#Isoccer#0" />
+            <element signature="method#relatorioFuncionarios#0;class#Isoccer#0" />
+            <element signature="method#relatorioRecursosFisicos#0;class#Isoccer#0" />
+            <element signature="method#relatorioSocios#0;class#Isoccer#0" />
+            <element signature="method#adicionarFuncionario#0;class#Isoccer#0" />
+            <element signature="method#adicionarSociotorcedor#0;class#Isoccer#0" />
+            <element signature="method#alterarValorContribuicao#0;class#Isoccer#0" />
+            <element signature="method#alterarEstadoDePagamentoSocio#0;class#Isoccer#0" />
+            <element signature="method#menuRecursos#0;class#Isoccer#0" />
+            <element signature="method#menuGerenciarCentroTreinamento#0;class#Isoccer#0" />
+            <element signature="method#centroTreinamentoDisponivel#0;class#Isoccer#0" />
+            <element signature="method#estadioDisponivel#0;class#Isoccer#0" />
+            <element signature="method#menuGerenciarEstadio#0;class#Isoccer#0" />
+            <element signature="method#menuEstadioDisponivel#0;class#Isoccer#0" />
+            <element signature="method#menuEstadioIndisponivel#0;class#Isoccer#0" />
+            <element signature="method#menuGerenciarOnibus#0;class#Isoccer#0" />
+            <element signature="method#onibusDisponiveis#0;class#Isoccer#0" />
+            <element signature="method#checarIdentificacao#0;class#Isoccer#0" />
+            <element signature="method#validarIdentificacao#0;class#Isoccer#0" />
+            <element signature="method#adicionarOnibus#0;class#Isoccer#0" />
+            <element signature="method#alterarDisponibilidadeOnibus#0;class#Isoccer#0" />
+            <element signature="method#getOnibusPorIdentificacao#0;class#Isoccer#0" />
           </folding>
         </state>
       </provider>

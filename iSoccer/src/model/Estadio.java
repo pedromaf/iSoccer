@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class Estadio extends RecursoFisico {
 
     private int numeroTorcedores;
@@ -15,7 +17,11 @@ public class Estadio extends RecursoFisico {
 
     @Override
     public void relatorio() {
-        //TODO
+        super.relatorio();
+        Console.mostrar("Capacidade de torcedores: " + this.numeroTorcedores);
+        Console.mostrar("Numero de banheiros: " + this.numeroBanheiros);
+        Console.mostrar("Numero de lanchonetes: " + this.numeroLanchonetes);
+
     }
 
     public void setNumeroTorcedores(int numeroTorcedores) {

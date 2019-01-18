@@ -41,4 +41,11 @@ public class Erro {
 
         System.out.println("Identificacao invalida!");
     }
+
+
+    //JOGADOR
+    public static void jogadorNaoEncontrado() {
+
+        System.out.println("Jogador nao encontrado!");
+    }
 }

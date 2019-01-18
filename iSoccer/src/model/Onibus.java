@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class Onibus extends RecursoFisico {
 
     private String placa;
@@ -23,6 +25,12 @@ public class Onibus extends RecursoFisico {
 
     @Override
     public void relatorio() {
-        //TODO
+        super.relatorio();
+        Console.mostrar("Placa: " + this.placa);
+        if(this.disponivel) {
+            Console.mostrar("Onibus disponivel para uso.");
+        } else {
+            Console.mostrar("Onibus indisponivel para uso.");
+        }
     }
 }

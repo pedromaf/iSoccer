@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class Sociotorcedor implements Relatorio{
 
     public enum Tipo {
@@ -25,6 +27,11 @@ public class Sociotorcedor implements Relatorio{
         this.inadimplente = false;
     }
 
+    public boolean getInadimplente() {
+
+        return this.inadimplente;
+    }
+
     public void alterarInadimplencia() {
 
         this.inadimplente = !this.inadimplente;
@@ -35,7 +42,7 @@ public class Sociotorcedor implements Relatorio{
         return cpf;
     }
 
-    public Tipo getTipoPorNumero(int tipo) {
+    private Tipo getTipoPorNumero(int tipo) {
 
         switch(tipo) {
             case 1:
@@ -48,8 +55,31 @@ public class Sociotorcedor implements Relatorio{
         }
     }
 
+    private String getTipoString() {
+
+        switch(tipo) {
+            case JUNIOR:
+                return "Junior";
+            case SENIOR:
+                return "Senior";
+            case ELITE:
+            default:
+                return "Elite";
+        }
+    }
+
     @Override
     public void relatorio() {
-        //TODO
+        Console.mostrar("Nome: " + this.nome);
+        Console.mostrar("Email: " + this.email);
+        Console.mostrar("CPF: " + this.cpf);
+        Console.mostrar("Telefone: " + this.telefone);
+        Console.mostrar("Endereco: " + this.endereco);
+        Console.mostrar("Tipo: " + getTipoString());
+        if(this.inadimplente) {
+            Console.mostrar("Estado de pagamento: inadimplente");
+        } else {
+            Console.mostrar("Estado de pagamento: adimplente");
+        }
     }
 }

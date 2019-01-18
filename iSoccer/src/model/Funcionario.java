@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class Funcionario implements Relatorio{
 
     public enum Cargo {
@@ -23,7 +25,17 @@ public class Funcionario implements Relatorio{
         this.cargo = getCargoPorNumero(cargo);
     }
 
-    public Cargo getCargoPorNumero(int cargo) {
+    public String getCpf() {
+
+        return this.cpf;
+    }
+
+    public Cargo getCargo() {
+
+        return this.cargo;
+    }
+
+    private Cargo getCargoPorNumero(int cargo) {
 
         switch(cargo) {
             case 1:
@@ -46,8 +58,36 @@ public class Funcionario implements Relatorio{
         }
     }
 
+    private String getCargoString() {
+
+        switch(this.cargo) {
+            case PRESIDENTE:
+                return "Presidente";
+            case MEDICO:
+                return "Medico";
+            case TECNICO:
+                return "Tecnico";
+            case PREPARADORFISICO:
+                return "Preparador fisico";
+            case MOTORISTA:
+                return "Motorista";
+            case COZINHEIRO:
+                return "Cozinheiro";
+            case ADVOGADO:
+                return "Advogado";
+            case JOGADOR:
+            default:
+                return "Jogador";
+        }
+    }
+
     public void relatorio() {
 
-        //TODO
+        Console.mostrar("Nome: " + this.nome);
+        Console.mostrar("Email: " + this.email);
+        Console.mostrar("CPF: " + this.cpf);
+        Console.mostrar("Telefone: " + this.telefone);
+        Console.mostrar("Salario: " + this.salario);
+        Console.mostrar("Cargo: " + getCargoString());
     }
 }

@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class RecursoFisico implements Relatorio {
 
     private String identificacao;
@@ -16,6 +18,6 @@ public class RecursoFisico implements Relatorio {
 
     @Override
     public void relatorio() {
-        //TODO
+        Console.mostrar("Identificacao: " + this.identificacao);
     }
 }

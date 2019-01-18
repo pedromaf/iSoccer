@@ -68,27 +68,31 @@ class Isoccer {
         do {
             Console.menuPrincipal();
             try {
-                opcao = Input.validarOpcao(1,7);
+                opcao = Input.validarOpcao(1,8);
 
                 switch(opcao) {
                     case 1:
                         adicionarFuncionario();
                         break;
                     case 2:
-                        adicionarSociotorcedor();
+                        alterarEstadoDeJogador();
                         break;
                     case 3:
-                        alterarValorContribuicao();
+                        adicionarSociotorcedor();
                         break;
                     case 4:
-                        alterarEstadoDePagamentoSocio();
+                        alterarValorContribuicao();
                         break;
                     case 5:
-                        menuRecursos();
+                        alterarEstadoDePagamentoSocio();
                         break;
                     case 6:
+                        menuRecursos();
                         break;
                     case 7:
+                        menuRelatorio();
+                        break;
+                    case 8:
                     default:
                         voltar = true;
                 }
@@ -97,6 +101,140 @@ class Isoccer {
             }
 
         }while(!voltar);
+    }
+
+    private void alterarEstadoDeJogador() {
+
+        String cpf;
+
+        Console.solicitarCpf();
+        cpf = Input.lerString();
+
+        for(Funcionario atual: this.listaFuncionarios) {
+            if(atual instanceof Jogador) {
+                if(atual.getCpf().equals(cpf)) {
+                    ((Jogador)atual).alterarAptidao();
+                    Console.estadoJogadorAlterado();
+                    return;
+                }
+            }
+        }
+        Erro.jogadorNaoEncontrado();
+    }
+
+    private void menuRelatorio() {
+
+        int opcao = 0;
+        boolean entradaValida = false;
+
+        do {
+            Console.menuRelatorio();
+            try {
+                opcao = Input.validarOpcao(1,5);
+                entradaValida = true;
+            } catch(NumberFormatException exception) {
+                Erro.entradaInvalida();
+            }
+        } while(!entradaValida);
+
+        switch(opcao) {
+            case 1:
+                Console.mostrar(">>> Relatorio Geral <<<\n");
+                relatorioGeral();
+                break;
+            case 2:
+                Console.mostrar(">>> Relatorio de Funcionarios <<<\n");
+                relatorioFuncionarios();
+                break;
+            case 3:
+                Console.mostrar(">>> Relatorio de Recursos Fisicos <<<\n");
+                relatorioRecursosFisicos();
+                break;
+            case 4:
+                Console.mostrar(">>> Relatorio de Socios-torcedores <<<\n");
+                relatorioSocios();
+            default:
+        }
+    }
+
+    private void relatorioGeral() {
+
+        relatorioFuncionarios();
+        relatorioRecursosFisicos();
+        relatorioSocios();
+    }
+
+    private void relatorioFuncionarios() {
+
+        Console.mostrar("\n\t\t[Time]\n");
+        for(Funcionario atual: this.listaFuncionarios) {
+            if(atual.getCargo().equals(Funcionario.Cargo.TECNICO)) {
+                atual.relatorio();
+                Console.mostrar("---------------");
+            }
+        }
+        for(Funcionario atual: this.listaFuncionarios) {
+            if(atual.getCargo().equals(Funcionario.Cargo.JOGADOR)) {
+                atual.relatorio();
+                Console.mostrar("---------------");
+            }
+        }
+        Console.mostrar("\n\t\t[Servicos gerais]\n");
+        for(Funcionario atual: this.listaFuncionarios) {
+            if(!atual.getCargo().equals(Funcionario.Cargo.TECNICO) && !atual.getCargo().equals(Funcionario.Cargo.JOGADOR)) {
+                atual.relatorio();
+                Console.mostrar("---------------");
+            }
+        }
+    }
+
+    private void relatorioRecursosFisicos() {
+
+        Console.mostrar("\n\t\t[Transporte]\n");
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual instanceof Onibus) {
+                ((Onibus)atual).relatorio();
+                Console.mostrar("---------------");
+            }
+        }
+        Console.mostrar("\n\t\t[Estadio]\n");
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual instanceof Estadio) {
+                ((Estadio)atual).relatorio();
+                Console.mostrar("---------------");
+                break;
+            }
+        }
+        Console.mostrar("\n\t\t[Centro de Treinamento]\n");
+        for(RecursoFisico atual: this.listaRecursosFisicos) {
+            if(atual instanceof CentroTreinamento) {
+                ((CentroTreinamento)atual).relatorio();
+                Console.mostrar("---------------");
+                break;
+            }
+        }
+    }
+
+    private void relatorioSocios() {
+
+        int inadimplentes = 0;
+        int total = this.listaSociostorcedores.size();
+
+        Console.mostrar("Total de socios-torcedores: " + total);
+
+        for(Sociotorcedor atual: this.listaSociostorcedores) {
+            if(atual.getInadimplente()) {
+               inadimplentes++;
+            }
+        }
+
+        Console.mostrar("Total de socios adimplentes: " + (total - inadimplentes));
+        Console.mostrar("Total de socios inadimplentes: " + inadimplentes);
+        Console.mostrar("---------------");
+
+        for(Sociotorcedor atual: this.listaSociostorcedores) {
+            atual.relatorio();
+        }
     }
 
     private void adicionarFuncionario() {

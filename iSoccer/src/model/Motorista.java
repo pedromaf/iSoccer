@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class Motorista extends Funcionario {
 
     String habilitacao;
@@ -12,6 +14,6 @@ public class Motorista extends Funcionario {
     @Override
     public void relatorio() {
         super.relatorio();
-        //TODO
+        Console.mostrar("Habilitacao: " + this.habilitacao);
     }
 }

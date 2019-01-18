@@ -1,5 +1,7 @@
 package model;
 
+import view.Console;
+
 public class Medico extends Funcionario {
 
     String crm;
@@ -12,6 +14,6 @@ public class Medico extends Funcionario {
     @Override
     public void relatorio() {
         super.relatorio();
-        //TODO
+        Console.mostrar("CRM: " + this.crm);
     }
 }

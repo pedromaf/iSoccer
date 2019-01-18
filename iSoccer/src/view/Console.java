@@ -12,12 +12,13 @@ public class Console {
 
         System.out.println("\n\t\t[Menu Principal]\n");
         System.out.println("[1] Adicionar funcionario");
-        System.out.println("[2] Adicionar socio-torcedor");
-        System.out.println("[3] Alterar valores de contribuicao");
-        System.out.println("[4] Alterar estado de pagamento de socio-torcedor");
-        System.out.println("[5] Gerenciar recursos");
-        System.out.println("[6] Solicitar relatorio");
-        System.out.println("[7] Sair");
+        System.out.println("[2] Alterar estado de jogador");
+        System.out.println("[3] Adicionar socio-torcedor");
+        System.out.println("[4] Alterar valores de contribuicao");
+        System.out.println("[5] Alterar estado de pagamento de socio-torcedor");
+        System.out.println("[6] Gerenciar recursos");
+        System.out.println("[7] Solicitar relatorio");
+        System.out.println("[8] Sair");
 
         digiteOpcao();
     }
@@ -126,6 +127,13 @@ public class Console {
     public static void funcionarioAdicionado() {
 
         System.out.println("Funcionario adicionado!");
+    }
+
+
+    //ALTERAR APTDAO JOGADOR
+    public static void estadoJogadorAlterado() {
+
+        System.out.println("Estado do jogador alterado!");
     }
 
 
@@ -315,5 +323,20 @@ public class Console {
     public static void centroTreinamentoAdicionado() {
 
         System.out.println("Centro de treinamento adicionado!");
+    }
+
+
+
+    //RELATORIO
+    public static void menuRelatorio() {
+
+        System.out.println("\n\t\t[Relatorio]\n");
+        System.out.println("[1] Geral");
+        System.out.println("[2] Funcionarios");
+        System.out.println("[3] Recursos fisicos");
+        System.out.println("[4] Socios-torcedores");
+        System.out.println("[5] Voltar");
+
+        digiteOpcao();
     }
 }
