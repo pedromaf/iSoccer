@@ -140,3 +140,32 @@ Projeto P3
                 Classe responsável por mensagens de erro de diversas classes diferentes.
                 
 Obs: as demais classes não relatadas aqui tem exclusivamente a função de guardar dados.                
+
+
+    Interface:
+
+        Motivação:
+            Garantir que todos os objetos tratados pelo sistema tenham a capacidade de gerar um relatório individual.
+
+        Solução:
+            Interface 'Relatório' garante que todo objeto tenha a função relatorio() que expressa seus dados de maneira organizada.
+
+        Vantages:
+             Permite que um relatório geral possa ser gerado facilmente apenas solicitando trechos individuais de cada objeto. 
+
+        Desvantagens:
+            Não garante a obrigatoriedade das subclasses expressarem seus dados.
+
+    Tratamento de Exceções:
+
+        Motivação:
+            Tratar entradas numéricas. (NumberFormatException)
+
+        Solução:
+            Dados são solicitados novamente após entradas inválidas
+
+        Vantages:
+            Sistema não tem a execução interrompida por erros de input do usuário.
+
+        Desvantagens:
+            ...
